@@ -44,7 +44,7 @@ const Home = () => {
       <div className="h-[8vh] w-full lg:h-full lg:w-[20%] block">
         <Sidenav />
       </div>
-      <div className="h-full w-[100%] px-3 overflow-y-auto lg:w-[80%] ">
+      <div className="h-full w-[100%] px-3 overflow-y-auto lg:w-[80%] noscrollbar ">
         <div className="fixed  left-0  z-20 w-full">
           <Topnav />
         </div>
