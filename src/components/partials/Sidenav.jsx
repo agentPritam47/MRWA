@@ -80,7 +80,7 @@ const Sidenav = () => {
         </Link>
       </div>
 
-      <div className={`block absolute w-[60vw] h-screen bg-[#1e1f24] z-[999] lg:hidden transition-all duration-500 ${sidenav ? "left-0" : "left-[-100%]"}`}>
+      <div className={`block absolute w-[70vw] h-screen bg-[#1e1f24] z-[999] lg:hidden transition-all duration-500 ${sidenav ? "left-0" : "left-[-100%]"}`}>
         <h1 className=" px-5 text-2xl font-semibold mt-5 pb-5 font-[mori]">
           New Feeds
         </h1>
