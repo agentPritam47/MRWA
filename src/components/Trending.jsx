@@ -50,7 +50,7 @@ const Trending = () => {
   return (
     <div className="h-fit w-full bg-[#1e1f24] px-7 py-1 ">
       <div className="w-full sm:flex sm:flex-row flex-col items-center justify-between fixed z-[999] top-0 left-0 px-2 py-2 ">
-        <div className="flex w-full sm:w-[13vw] items-center bg-red-300 ">
+        <div className="flex w-full sm:w-[13vw] items-center ">
           <i
             onClick={() => navigate(-1)}
             className="ri-arrow-left-line text-white transition-all duration-300 hover:text-[#6555cd] text-3xl cursor-pointer p-2"
