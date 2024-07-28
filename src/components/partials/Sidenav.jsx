@@ -87,7 +87,7 @@ const Sidenav = () => {
 
         <Link
           to="/trending"
-          className="block hover:bg-[#6556cd] py-5 px-7 rounded-md text-2xl transition-all duration-500"
+          className="block hover:bg-[#6556cd] py-5 px-7 rounded-md text-xl transition-all duration-500"
         >
           <h1>
             <i className="ri-fire-fill mr-3"></i>Trending
@@ -95,7 +95,7 @@ const Sidenav = () => {
         </Link>
         <Link
           to="/popular"
-          className=" block hover:bg-[#6556cd] py-5 px-7 rounded-md text-2xl transition-all duration-500"
+          className=" block hover:bg-[#6556cd] py-5 px-7 rounded-md text-xl transition-all duration-500"
         >
           <h1>
             <i className="ri-bard-fill mr-3"></i>Popular
@@ -103,7 +103,7 @@ const Sidenav = () => {
         </Link>
         <Link
           to="/movie"
-          className="block hover:bg-[#6556cd] py-5 px-7 rounded-md text-2xl transition-all duration-500"
+          className="block hover:bg-[#6556cd] py-5 px-7 rounded-md text-xl transition-all duration-500"
         >
           <h1>
             <i className="ri-movie-2-fill mr-3"></i>Movies
@@ -111,7 +111,7 @@ const Sidenav = () => {
         </Link>
         <Link
           to="/tv"
-          className="block hover:bg-[#6556cd] py-5 px-7 rounded-md text-2xl transition-all duration-500"
+          className="block hover:bg-[#6556cd] py-5 px-7 rounded-md text-xl transition-all duration-500"
         >
           <h1>
             <i className="ri-tv-2-fill mr-3"></i>Tv Shows
@@ -119,7 +119,7 @@ const Sidenav = () => {
         </Link>
         <Link
           to="/people"
-          className="block hover:bg-[#6556cd] py-5 px-7 rounded-md text-2xl transition-all duration-500"
+          className="block hover:bg-[#6556cd] py-5 px-7 rounded-md text-xl transition-all duration-500"
         >
           <h1>
             <i className="ri-team-fill mr-3"></i>People
@@ -132,12 +132,12 @@ const Sidenav = () => {
           Information
         </h1>
 
-        <div className=" hover:bg-[#6556cd] py-5 px-7 rounded-md text-2xl transition-all duration-500 ">
+        <div className=" hover:bg-[#6556cd] py-5 px-7 rounded-md text-xl transition-all duration-500 ">
           <Link to="/about">
             <i className="ri-information-2-fill mr-3"></i>About
           </Link>
         </div>
-        <Link to="/contact" className="block hover:bg-[#6556cd] py-5 px-7 rounded-md text-2xl transition-all duration-500">
+        <Link to="/contact" className="block hover:bg-[#6556cd] py-5 px-7 rounded-md text-xl transition-all duration-500">
           <h1 >
             <i className="ri-phone-fill mr-3"></i>Contact
           </h1>
