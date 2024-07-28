@@ -49,11 +49,11 @@ const Movie = () => {
 
   return movie ? (
     <div className="h-fit w-full bg-[#1e1f24] px-7 py-1 ">
-      <div className="w-full sm:flex sm:flex-row flex-col items-center justify-between fixed z-[999] top-0 left-0 px-5 py-2 ">
+      <div className="w-full sm:flex sm:flex-row flex-col items-center justify-between fixed z-[999] top-0 left-0 px-2 py-2 ">
         <div className="flex w-full sm:w-[13vw] items-center ">
           <i
             onClick={() => navigate(-1)}
-            className="ri-arrow-left-line text-white transition-all duration-300 hover:text-[#6555cd] text-3xl cursor-pointer p-3"
+            className="ri-arrow-left-line text-white transition-all duration-300 hover:text-[#6555cd] text-3xl cursor-pointer p-2"
           ></i>
           <h1 className=" text-white font-[mori] text-2xl">Movie</h1>
           <div className="sm:hidden flex items-center gap-2 justify-end sm:gap-0 sm:justify-between w-full sm:w-[17vw] relative z-[999] ">

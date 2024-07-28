@@ -17,7 +17,7 @@ import Contact from "./components/Contact.jsx";
 
 const App = () => {
   return (
-    <div className="h-screen w-full bg-[#1e1f24] ">
+    <div className="h-screen w-full bg-[#1e1f24] noscrollbar">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/trending" element={<Trending />} />
