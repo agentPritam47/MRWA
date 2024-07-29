@@ -12,17 +12,28 @@ const Home = () => {
   const [walpaper, setWalpaper] = useState(null);
   const [trending, setTrending] = useState([]);
   const [category, setCategory] = useState("all");
+  const [loading, setLoading] = useState(true);
 
   // Header data
   const getWalpaper = async () => {
-    const { data } = await axios.get(`/trending/all/day`);
-    setWalpaper(data.results[Math.floor(Math.random() * data.results.length)]);
+    try {
+      const { data } = await axios.get(`/trending/all/day`);
+      setWalpaper(data.results[Math.floor(Math.random() * data.results.length)]);
+    } catch (error) {
+      console.error("Error fetching wallpaper:", error);
+    }
   };
 
   // Trending data
   const getTrending = async () => {
-    const { data } = await axios.get(`/trending/${category}/day`);
-    setTrending(data.results);
+    try {
+      const { data } = await axios.get(`/trending/${category}/day`);
+      setTrending(data.results);
+      setLoading(false); // Data fetched successfully, stop loading
+    } catch (error) {
+      console.error("Error fetching trending data:", error);
+      setLoading(false); // Stop loading on error
+    }
   };
 
   useEffect(() => {
@@ -37,7 +48,7 @@ const Home = () => {
     getTrending();
   }, [category]);
 
-  return walpaper && trending.length ? (
+  return !loading && walpaper && trending.length ? (
     <div className="w-full h-full flex flex-col lg:flex-row overflow-y-hidden">
       <div className="h-[8vh] w-full lg:h-full lg:w-[20%] block">
         <Sidenav />
