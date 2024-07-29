@@ -4,17 +4,16 @@ import Topnav from "./partials/Topnav";
 import Header from "./partials/Header";
 import axios from "../utils/axios";
 import Cards from "./partials/Cards";
-import Dropdown from "./partials/Dropdown";
 import Loader from "./Loader";
 
 const Home = () => {
   document.title = "PRIMEX | HOMEPAGE";
 
-  // Header data
-  const [walpaper, setWalpaper] = useState("");
-  const [trending, setTrending] = useState("");
+  const [walpaper, setWalpaper] = useState(null);
+  const [trending, setTrending] = useState([]);
   const [category, setCategory] = useState("all");
 
+  // Header data
   const getWalpaper = async () => {
     const { data } = await axios.get(`/trending/all/day`);
     setWalpaper(data.results[Math.floor(Math.random() * data.results.length)]);
@@ -28,7 +27,6 @@ const Home = () => {
 
   useEffect(() => {
     if (!walpaper) getWalpaper();
-    if (!trending) getTrending();
     const interval = setInterval(() => {
       getWalpaper();
     }, 15000);
@@ -39,13 +37,13 @@ const Home = () => {
     getTrending();
   }, [category]);
 
-  return walpaper && trending ? (
+  return walpaper && trending.length ? (
     <div className="w-full h-full flex flex-col lg:flex-row overflow-y-hidden">
       <div className="h-[8vh] w-full lg:h-full lg:w-[20%] block">
         <Sidenav />
       </div>
-      <div className="h-full w-[100%] px-3 overflow-y-auto lg:w-[80%] noscrollbar ">
-        <div className="fixed  left-0  z-20 w-full">
+      <div className="h-full w-[100%] px-3 overflow-y-auto lg:w-[80%] noscrollbar">
+        <div className="fixed left-0 z-20 w-full">
           <Topnav />
         </div>
         <Header data={walpaper} />
