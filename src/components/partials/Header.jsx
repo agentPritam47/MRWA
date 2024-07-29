@@ -17,10 +17,10 @@ const Header = ({ data }) => {
         alt=""
       />
       <div className="h-full w-full bg-gradient-to-b from-transparent  to-[#000000db] absolute top-0 left-0 p-5">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mt-[12vw] font-[mori] ">
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mt-[10vw] sm:mt-[12vw] font-[mori] ">
           {data.name || data.title || data.original_name || data.original_title}
         </h1>
-        <p className="text-white w-[100%] sm:w-[60%] font-[moril] mt-5 opacity-75">
+        <p className="text-white w-[100%] sm:w-[60%] font-[moril] leading-none sm:leading-normal mt-5 opacity-75">
             {data.overview.split(' ').slice(0, 20).join(' ')} <Link to={`/${data.media_type}/details/${data.id}`} className="text-blue-400">more..</Link>
         </p>
         <p className=" text-white mt-3 ">
