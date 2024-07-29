@@ -16,18 +16,18 @@ const Header = ({ data }) => {
         }
         alt=""
       />
-      <div className="h-full w-full bg-gradient-to-b from-transparent  to-[#000000db] absolute top-0 left-0 p-5">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mt-[10vw] sm:mt-[12vw] font-[mori] ">
+      <div className="h-full w-full bg-gradient-to-b from-transparent  to-[#000000db] absolute top-0 left-0 p-5 flex flex-col justify-end">
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white  font-[mori] ">
           {data.name || data.title || data.original_name || data.original_title}
         </h1>
-        <p className="text-white w-[100%] sm:w-[60%] font-[moril] leading-none sm:leading-normal mt-5 opacity-75">
+        <p className="text-white w-[100%] sm:w-[60%] font-[moril] sm:leading-normal mt-5 opacity-75">
             {data.overview.split(' ').slice(0, 20).join(' ')} <Link to={`/${data.media_type}/details/${data.id}`} className="text-blue-400">more..</Link>
         </p>
         <p className=" text-white mt-3 ">
             {data.release_date && <span className=" inline-block pr-5"><i className="ri-megaphone-fill pr-2 text-yellow-500"></i>{data.release_date}</span>}
             <span><i className="ri-album-fill pr-2 text-yellow-500"></i>{data.media_type.toUpperCase()}</span>
         </p>
-        <Link to={`/${data.media_type}/details/${data.id}/trailer`} className="px-3 py-2 bg-[#6556cd] rounded-lg text-white mt-3 inline-block font-[moril]">Watch Trailer</Link>
+        <Link to={`/${data.media_type}/details/${data.id}/trailer`} className="px-3 py-2 w-fit bg-[#6556cd] rounded-lg text-white mt-3 inline-block font-[moril]">Watch Trailer</Link>
       </div>
     </div>
   )
