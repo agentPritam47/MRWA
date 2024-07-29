@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import Sidenav from "./partials/Sidenav";
 import Topnav from "./partials/Topnav";
 import Header from "./partials/Header";
 import axios from "../utils/axios";
 import Cards from "./partials/Cards";
 import Loader from "./Loader";
-import debounce from "lodash.debounce";
 
 const Home = () => {
   document.title = "PRIMEX | HOMEPAGE";
@@ -15,39 +14,39 @@ const Home = () => {
   const [category, setCategory] = useState("all");
   const [loading, setLoading] = useState(true);
 
-  const getWalpaper = useCallback(async () => {
+  // Header data
+  const getWalpaper = async () => {
     try {
       const { data } = await axios.get(`/trending/all/day`);
       setWalpaper(data.results[Math.floor(Math.random() * data.results.length)]);
     } catch (error) {
       console.error("Error fetching wallpaper:", error);
     }
-  }, []);
+  };
 
-  const getTrending = useCallback(async () => {
+  // Trending data
+  const getTrending = async () => {
     try {
       const { data } = await axios.get(`/trending/${category}/day`);
       setTrending(data.results);
-      setLoading(false);
+      setLoading(false); // Data fetched successfully, stop loading
     } catch (error) {
       console.error("Error fetching trending data:", error);
-      setLoading(false);
+      setLoading(false); 
     }
-  }, [category]);
+  };
 
   useEffect(() => {
     if (!walpaper) getWalpaper();
-    const interval = setInterval(() => {
-      getWalpaper();
-    }, 15000);
-    return () => clearInterval(interval);
-  }, [walpaper, getWalpaper]);
+    // const interval = setInterval(() => {
+    //   getWalpaper();
+    // }, 15000);
+    // return () => clearInterval(interval);
+  }, [walpaper]);
 
   useEffect(() => {
-    const debouncedGetTrending = debounce(getTrending, 300);
-    debouncedGetTrending();
-    return () => debouncedGetTrending.cancel();
-  }, [category, getTrending]);
+    getTrending();
+  }, [category]);
 
   return !loading && walpaper && trending.length ? (
     <div className="w-full h-full flex flex-col lg:flex-row overflow-y-hidden">
@@ -63,7 +62,7 @@ const Home = () => {
       </div>
     </div>
   ) : (
-    <Loader /> // Consider using a Skeleton Screen or Placeholder here
+    <Loader />
   );
 };
 
