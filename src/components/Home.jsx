@@ -45,7 +45,7 @@ const Home = () => {
   }, [walpaper]);
 
   useEffect(() => {
-    if (trending.length<=0) getTrending();
+    getTrending();
   }, [category]);
 
   return !loading && walpaper && trending.length ? (
