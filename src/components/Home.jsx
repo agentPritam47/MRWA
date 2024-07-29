@@ -48,7 +48,7 @@ const Home = () => {
     getTrending();
   }, [category]);
 
-  return !loading && walpaper && trending.length && (
+  return !loading && walpaper && trending.length ? (
     <div className="w-full h-full flex flex-col lg:flex-row overflow-y-hidden">
       <div className="h-[8vh] w-full lg:h-full lg:w-[20%] block">
         <Sidenav />
@@ -61,7 +61,9 @@ const Home = () => {
         <Cards data={trending} func={setCategory} type={category} />
       </div>
     </div>
-  ) 
+  ) : (
+    <Loader />
+  );
 };
 
 export default Home;
