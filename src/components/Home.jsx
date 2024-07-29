@@ -41,11 +41,11 @@ const Home = () => {
     const interval = setInterval(() => {
       getWalpaper();
     }, 15000);
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); 
   }, [walpaper]);
 
   useEffect(() => {
-    getTrending();
+    if (trending.length<=0) getTrending();
   }, [category]);
 
   return !loading && walpaper && trending.length ? (
